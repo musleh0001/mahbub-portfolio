@@ -413,6 +413,7 @@ Header
     margin: 0 15px;
     z-index: 1;
     transition: opacity 0.5s ease-in-out;
+    /* position: relative; */
 }
 
 .header .nav-toggler.hide {
@@ -467,13 +468,13 @@ Header
 }
 
 .header .nav {
-    position: fixed;
-    left: 0;
+    /* position: fixed */
+    position: relative;
+    right: 0;
     top: 0;
     height: 100%;
     width: 100%;
     padding: 35px 15px;
-    overflow-y: auto;
     visibility: hidden;
 }
 
@@ -483,6 +484,16 @@ Header
 
 .header.active .nav-inner {
     opacity: 1;
+}
+
+.header .nav-shape {
+    width: 30px;
+    height: 30px;
+    background-color: var(--white);
+    position: absolute;
+    top: -3%;
+    right: 5%;
+    transform: rotate(45deg);
 }
 
 .header .nav-inner {
@@ -499,33 +510,33 @@ Header
     justify-content: center;
     opacity: 0;
     transition: all 0.5s ease; */
-    min-height: calc(100vh - 600px);
-    max-width: 1200px;
-    background-color: var(--white-alpha-25);
+    position: absolute;
+    top: 10%;
+    right: 1%;
+    min-height: 100px;
+    max-width: 400px;
+    border-radius: 10px;
+    background-color: var(--white);
     border: 1px solid var(--white-alpha-40);
-    border-radius: 30px;
-    padding: 50px 0;
-    top: 0;
-    right: 0;
-    margin: auto;
+    backdrop-filter: var(--backdrop-filter-blur);
+    padding: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(10px);
     opacity: 0;
     transition: all 0.5s ease;
 }
 
 .header .nav-inner ul {
-    margin: 90px 0;
+    margin: 20px 20px;
 }
 
 .header .nav-inner ul li{
-    text-align: center;
+    text-align: left;
 }
 
 .header .nav-inner ul li a {
-    font-size: 32px;
+    font-size: 20px;
     text-transform: capitalize;
     color: var(--blue-dark);
     display: block;
