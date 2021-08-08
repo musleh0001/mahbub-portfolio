@@ -575,7 +575,7 @@ Header
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 200px;
+    /* margin-left: -120px; */
     transition: all 0.3s ease;
 }
 
@@ -934,6 +934,27 @@ Portfolio Section
     .portfolio-item {
         width: calc(50% - 30px);
     }
+
+    .header .nav-shape {
+        display: none;
+    }
+
+    .header .nav-inner {
+        position: absolute;
+        top: -70px;
+        left: 0;
+        border-radius: 30px;
+        min-width: 300px;
+        width: 300px;
+        height: calc(100vh - 700px);
+        background-color: var(--white-alpha-25);
+        border: 1px solid var(--white-alpha-40);
+        backdrop-filter: blur(20px);
+    }
+
+    .header .nav-inner ul li a {
+        font-size: 22px;
+    }
 }
 
 @media(max-width:767px) {
@@ -968,7 +989,13 @@ Portfolio Section
 
 @media(max-width:575px) {
     .header .nav-inner ul li a {
-        font-size: 35px;
+        font-size: 25px;
+    }
+
+    .header .nav-inner {
+        max-width: 300px;
+        max-height: 900px;
+        height: 400px;
     }
 
     .home-text h1 {
